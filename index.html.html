@@ -7,75 +7,55 @@
 
 <style>
 body {margin:0; font-family:Arial; background:#f4f6f9;}
-header {
-    background:#0d6efd; color:white;
-    display:flex; justify-content:space-between;
-    align-items:center; padding:15px 30px;
-}
-header h1 {margin:0;}
-nav a {
-    color:white; margin:0 10px;
-    text-decoration:none; font-weight:bold;
-}
-
+header {background:#0d6efd; color:white; padding:20px; text-align:center;}
 .hero {
     background:linear-gradient(to right,#0d6efd,#198754);
-    color:white; padding:50px 20px;
-    text-align:center;
+    color:white; padding:40px; text-align:center;
 }
-
-.hero button {
-    padding:12px 20px;
-    border:none; margin:10px;
-    font-size:16px; border-radius:5px;
-    cursor:pointer;
+button {
+    padding:10px 15px;
+    margin:5px;
+    border:none;
+    border-radius:5px;
 }
-
 .call {background:white; color:#0d6efd;}
 .whatsapp {background:#25D366; color:white;}
 
-section {padding:40px 20px;}
-
 .services {
-    display:flex; gap:20px;
+    display:flex;
+    gap:15px;
     flex-wrap:wrap;
+    padding:20px;
 }
-
 .card {
     background:white;
-    padding:20px;
+    padding:15px;
     border-radius:10px;
-    flex:1; min-width:220px;
+    flex:1;
+    min-width:200px;
     text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .form-box {
-    max-width:500px;
+    max-width:400px;
     margin:auto;
     background:white;
     padding:20px;
     border-radius:10px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 input, button {
-    width:100%; padding:10px;
+    width:100%;
     margin-top:10px;
+    padding:10px;
 }
-
-button {
-    background:#198754;
-    color:white;
-    border:none;
-    font-size:16px;
-}
+button {background:#198754; color:white;}
 
 footer {
     background:#0d6efd;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:15px;
 }
 </style>
 </head>
@@ -83,90 +63,57 @@ footer {
 <body>
 
 <header>
-    <h1>TM GST Consultation</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<h1>TM GST Consultation</h1>
+<p>Your Tax Partner</p>
 </header>
 
 <div class="hero">
-    <h2>Simple GST Solutions for Your Business</h2>
-    <p>GSTR-1 | GSTR-2B | GSTR-3B Filing</p>
+<h2>GST Filing Made Easy</h2>
+<p>GSTR-1 | GSTR-2B | GSTR-3B</p>
 
-    <button class="call" onclick="window.location.href='tel:9345699700'">📞 Call Now</button>
-    <button class="whatsapp" onclick="window.open('https://wa.me/919345699700')">💬 WhatsApp</button>
+<button class="call" onclick="window.location.href='tel:9345699700'">Call Now</button>
+<button class="whatsapp" onclick="window.open('https://wa.me/919345699700')">WhatsApp</button>
 </div>
 
-<section id="services">
-    <h2 style="text-align:center;">Our Services</h2>
+<div class="services">
+<div class="card"><h3>GSTR-1 Filing</h3></div>
+<div class="card"><h3>GSTR-2B Check</h3></div>
+<div class="card"><h3>GSTR-3B Filing</h3></div>
+</div>
 
-    <div class="services">
-        <div class="card">
-            <h3>GSTR-1 Filing</h3>
-            <p>Sales return filing with accuracy</p>
-        </div>
+<div class="form-box">
+<h3>Select Service</h3>
 
-        <div class="card">
-            <h3>GSTR-2B Check</h3>
-            <p>ITC matching & reconciliation</p>
-        </div>
+<form onsubmit="sendToWhatsApp(); return false;">
+<label><input type="checkbox" value="GSTR-1"> GSTR-1</label><br>
+<label><input type="checkbox" value="GSTR-2B"> GSTR-2B</label><br>
+<label><input type="checkbox" value="GSTR-3B"> GSTR-3B</label><br>
 
-        <div class="card">
-            <h3>GSTR-3B Filing</h3>
-            <p>Monthly GST return filing</p>
-        </div>
-    </div>
-</section>
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
 
-<section>
-    <h2 style="text-align:center;">Select Your Service</h2>
-
-    <div class="form-box">
-        <form onsubmit="sendToWhatsApp(); return false;">
-
-            <label><input type="checkbox" value="GSTR-1 Filing"> GSTR-1 Filing</label><br>
-            <label><input type="checkbox" value="GSTR-2B Check"> GSTR-2B Check</label><br>
-            <label><input type="checkbox" value="GSTR-3B Filing"> GSTR-3B Filing</label><br>
-
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="tel" id="phone" placeholder="Phone Number" required>
-
-            <button type="submit">Send via WhatsApp</button>
-
-        </form>
-    </div>
-</section>
-
-<section id="contact">
-    <h2 style="text-align:center;">Our Location</h2>
-
-    <iframe 
-        src="https://maps.google.com/maps?q=Madurai&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="300" style="border:0;">
-    </iframe>
-</section>
+<button type="submit">Send Request</button>
+</form>
+</div>
 
 <footer>
-    <p>📞 9345699700 | TM GST Consultation</p>
+📞 9345699700 | TM GST Consultation
 </footer>
 
 <script>
 function sendToWhatsApp() {
-    let services = [];
-    document.querySelectorAll('input[type=checkbox]:checked')
-    .forEach(el => services.push(el.value));
+let services = [];
+document.querySelectorAll('input[type=checkbox]:checked')
+.forEach(el => services.push(el.value));
 
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
 
-    let message = "New GST Request:%0A"
-        + "Name: " + name + "%0A"
-        + "Phone: " + phone + "%0A"
-        + "Services: " + services.join(", ");
+let message = "GST Request:%0AName: " + name +
+"%0APhone: " + phone +
+"%0AServices: " + services.join(", ");
 
-    window.open("https://wa.me/919345699700?text=" + message, "_blank");
+window.open("https://wa.me/919345699700?text=" + message);
 }
 </script>
 
